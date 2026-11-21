@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گنا کھانا — Gana Khana</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="sticky-wrapper">
+        <header class="navbar">
+            <div class="nav-left brand-trigger" id="hoursTrigger" title="Click to see Opening Hours">
+                <img src="logo.png" alt="Gana Khana Logo" class="brand-logo">
+                <div class="brand-info">
+                    <h1>Gana Khana</h1>
+                    <span class="status-badge">
+                        <span class="dot"></span> Open Now • Free Delivery <i class="fas fa-chevron-down hours-arrow"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <div class="search-box" id="searchBox">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search item...">
+                    <button class="icon-btn" id="searchBtn" title="Search"><i class="fas fa-search"></i></button>
+                </div>
+                <button class="hamburger-btn" id="menuToggle" aria-label="Open Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <nav class="category-bar" id="categoryBar">
+            <a href="#burgers" class="cat-pill active"><img src="logo.png" alt=""> BURGERS</a>
+            <a href="#pizza" class="cat-pill"><img src="logo.png" alt=""> PIZZA'S</a>
+            <a href="#karahi" class="cat-pill"><img src="logo.png" alt=""> KARAHI</a>
+            <a href="#bbq" class="cat-pill"><img src="logo.png" alt=""> BBQ</a>
+            <a href="#appetizers" class="cat-pill"><img src="logo.png" alt=""> APPETIZERS</a>
+            <a href="#fries" class="cat-pill"><img src="logo.png" alt=""> FRIES</a>
+            <a href="#wings" class="cat-pill"><img src="logo.png" alt=""> WINGS</a>
+            <a href="#sandwich" class="cat-pill"><img src="logo.png" alt=""> SANDWICH</a>
+            <a href="#wrap" class="cat-pill"><img src="logo.png" alt=""> WRAP</a>
+            <a href="#pasta" class="cat-pill"><img src="logo.png" alt=""> PASTA'S</a>
+            <a href="#stakes" class="cat-pill"><img src="logo.png" alt=""> STAKES</a>
+            <a href="#chinese" class="cat-pill"><img src="logo.png" alt=""> CHINESE</a>
+            <a href="#roti-salad" class="cat-pill"><img src="logo.png" alt=""> ROTI / SALAD</a>
+            <a href="#tea" class="cat-pill"><img src="logo.png" alt=""> TEA</a>
+            <a href="#shakes" class="cat-pill"><img src="logo.png" alt=""> SHAKES</a>
+            <a href="#smoothies" class="cat-pill"><img src="logo.png" alt=""> SMOOTHIES</a>
+            <a href="#mocktails" class="cat-pill"><img src="logo.png" alt=""> MOCKTAILS</a>
+            <a href="#coffee" class="cat-pill"><img src="logo.png" alt=""> COFFEE</a>
+            <a href="#fish" class="cat-pill"><img src="logo.png" alt=""> FISH</a>
+            <a href="#dessert" class="cat-pill"><img src="logo.png" alt=""> DESERT</a>
+            <a href="#deals" class="cat-pill"><img src="logo.png" alt=""> DEALS</a>
+        </nav>
+    </div>
+
+    <div class="hours-overlay" id="hoursOverlay">
+        <div class="hours-modal" role="dialog" aria-modal="true" aria-labelledby="hoursModalTitle">
+            <div class="hours-modal-header">
+                <div>
+                    <h2 id="hoursModalTitle"><i class="far fa-clock"></i> Opening Hours</h2>
+                    <p>گنا کھانا — DHA Phase 5, Lahore</p>
+                </div>
+                <button class="modal-close-btn" id="closeHoursModal" aria-label="Close">&times;</button>
+            </div>
+            <ul class="hours-list" id="hoursList">
+                <li data-day="1"><span class="day-name">Monday</span><span class="day-time">12:00 PM – 2:00 AM</span></li>
+                <li data-day="2"><span class="day-name">Tuesday</span><span class="day-time">12:00 PM – 2:00 AM</span></li>
+                <li data-day="3"><span class="day-name">Wednesday</span><span class="day-time">12:00 PM – 2:00 AM</span></li>
+                <li data-day="4"><span class="day-name">Thursday</span><span class="day-time">12:00 PM – 2:00 AM</span></li>
+                <li data-day="5"><span class="day-name">Friday</span><span class="day-time">2:00 PM – 3:00 AM</span></li>
+                <li data-day="6"><span class="day-name">Saturday</span><span class="day-time">12:00 PM – 3:00 AM</span></li>
+                <li data-day="0"><span class="day-name">Sunday</span><span class="day-time">12:00 PM – 2:00 AM</span></li>
+            </ul>
+            <div class="hours-modal-footer">
+                <span><i class="fas fa-phone-alt"></i> 0321-8405690</span>
+                <span><i class="fas fa-motorcycle"></i> Free Delivery</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="side-drawer" id="sideDrawer">
+        <div class="drawer-header">
+            <img src="logo.png" alt="Gana Khana" class="drawer-logo">
+            <button class="close-btn" id="closeDrawer">&times;</button>
+        </div>
+        <ul class="drawer-links">
+            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#singer"><i class="fas fa-microphone-alt"></i> Singer</a></li>
+            <li><a href="#reviews"><i class="fas fa-star"></i> Reviews</a></li>
+            <li><a href="#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+        </ul>
+    </aside>
+
+    <main class="container" id="home">
+
+        <section class="hero-banner">
+            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1200&q=80" alt="Gana Khana Banner" loading="lazy">
+        </section>
+
+        <section id="burgers" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">BURGERS</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&q=80" alt="Burgers" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="15 - 20 mins" data-used="Stuffed chicken patty, soft bun, cheese slice, fresh veggies, house sauce">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&q=80" alt="Stuffed Chicken Burger" loading="lazy"></div>
+                    <div class="card-body">
+                        <h3>Stuffed Chicken Burger</h3>
+                        <p>Crispy stuffed chicken burger with rich filling.</p>
+                        <span class="price">Rs 999</span>
+                    </div>
+                </div>
+                <div class="food-card" data-time="15 - 20 mins" data-used="Grilled chicken or beef patty, toasted bun, lettuce, tomato, special mayo">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=500&q=80" alt="Grill Burger" loading="lazy"></div>
+                    <div class="card-body">
+                        <h3>Grill Burger</h3>
+                        <p>Chicken: Rs 699 | Beef: Rs 949</p>
+                        <span class="price">Rs 699 / 949</span>
+                    </div>
+                </div>
+                <div class="food-card" data-time="15 - 20 mins" data-used="Sauteed mushrooms, chicken or beef patty, cheese, creamy sauce, bun">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=500&q=80" alt="Mushroom Burger" loading="lazy"></div>
+                    <div class="card-body">
+                        <h3>Mushroom Burger</h3>
+                        <p>Chicken: Rs 699 | Beef: Rs 949</p>
+                        <span class="price">Rs 699 / 949</span>
+                    </div>
+                </div>
+                <div class="food-card" data-time="15 - 20 mins" data-used="Spicy jalapenos, chicken or beef patty, cheese, spicy mayo, soft bun">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=500&q=80" alt="Jalapeno Burger" loading="lazy"></div>
+                    <div class="card-body">
+                        <h3>Jalapeno Burger</h3>
+                        <p>Chicken: Rs 699 | Beef: Rs 949</p>
+                        <span class="price">Rs 699 / 949</span>
+                    </div>
+                </div>
+                <div class="food-card" data-time="15 - 20 mins" data-used="Smoky BBQ sauce, chicken or beef patty, onions, fresh greens, bun">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=500&q=80" alt="BBQ Burger" loading="lazy"></div>
+                    <div class="card-body">
+                        <h3>BBQ Burger</h3>
+                        <p>Chicken: Rs 699 | Beef: Rs 949</p>
+                        <span class="price">Rs 699 / 949</span>
+                    </div>
+                </div>
+                <div class="food-card" data-time="12 - 18 mins" data-used="Crispy fried chicken fillet, sesame bun, iceberg lettuce, creamy mayo">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=500&q=80" alt="Zinger Burger" loading="lazy"></div>
+                    <div class="card-body">
+                        <h3>Zinger Burger</h3>
+                        <p>Crispy golden fried chicken zinger burger.</p>
+                        <span class="price">Rs 649</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pizza" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">PIZZA'S (S / M / L)</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80" alt="Pizza" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="20 - 25 mins" data-used="Fresh dough, pizza sauce, mozzarella cheese, chicken tikka chunks, onions">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80" alt="Tikka Pizza" loading="lazy"></div>
+                    <div class="card-body"><h3>Tikka Pizza</h3><p>S: 699 | M: 1149 | L: 1799</p><span class="price">Rs 699 / 1149 / 1799</span></div>
+                </div>
+                <div class="food-card" data-time="20 - 25 mins" data-used="Fresh dough, fajita spiced chicken, capsicum, onions, olives, cheese">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80" alt="Fajita Pizza" loading="lazy"></div>
+                    <div class="card-body"><h3>Fajita Pizza</h3><p>S: 699 | M: 1149 | L: 1799</p><span class="price">Rs 699 / 1149 / 1799</span></div>
+                </div>
+                <div class="food-card" data-time="20 - 25 mins" data-used="Chicken chunks, vegetables, olives, mushrooms, rich mozzarella cheese">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=500&q=80" alt="Supreme Pizza" loading="lazy"></div>
+                    <div class="card-body"><h3>Supreme Pizza</h3><p>S: 699 | M: 1149 | L: 1799</p><span class="price">Rs 699 / 1149 / 1799</span></div>
+                </div>
+                <div class="food-card" data-time="20 - 25 mins" data-used="Gana Khana special toppings, marinated chicken, cheese, signature sauce">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80" alt="GK Special Pizza" loading="lazy"></div>
+                    <div class="card-body"><h3>GK Special Pizza</h3><p>S: 749 | M: 1249 | L: 1899</p><span class="price">Rs 749 / 1249 / 1899</span></div>
+                </div>
+                <div class="food-card" data-time="20 - 25 mins" data-used="Creamy malai boti chicken, cheese blend, herbs, baked crust">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1588315029754-2dd089d39a1a?w=500&q=80" alt="Malai Boti Pizza" loading="lazy"></div>
+                    <div class="card-body"><h3>Malai Boti Pizza</h3><p>S: 749 | M: 1249 | L: 1899</p><span class="price">Rs 749 / 1249 / 1899</span></div>
+                </div>
+                <div class="food-card" data-time="22 - 28 mins" data-used="Stuffed crown crust, cheese, chicken toppings, savory pizza sauce">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=500&q=80" alt="Crown Crust Pizza" loading="lazy"></div>
+                    <div class="card-body"><h3>Crown Crust Pizza</h3><p>S: 749 | M: 1299 | L: 1899</p><span class="price">Rs 749 / 1299 / 1899</span></div>
+                </div>
+                <div class="food-card" data-time="18 - 22 mins" data-used="Extra mozzarella and cheddar cheese blend, classic tomato sauce">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?w=500&q=80" alt="Cheese Lover Pizza" loading="lazy"></div>
+                    <div class="card-body"><h3>Cheese Lover Pizza</h3><p>S: 699 | M: 1149 | L: 1799</p><span class="price">Rs 699 / 1149 / 1799</span></div>
+                </div>
+                <div class="food-card" data-time="20 - 25 mins" data-used="Loaded chicken chunks, spicy & creamy flavors, mozzarella cheese">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=500&q=80" alt="Chicken Lover Pizza" loading="lazy"></div>
+                    <div class="card-body"><h3>Chicken Lover Pizza</h3><p>S: 749 | M: 1249 | L: 1899</p><span class="price">Rs 749 / 1249 / 1899</span></div>
+                </div>
+                <div class="food-card" data-time="22 - 28 mins" data-used="Kabab-filled crust, spiced chicken, onions, capsicum, cheese">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&q=80" alt="Kabab Crust Pizza" loading="lazy"></div>
+                    <div class="card-body"><h3>Kabab Crust Pizza</h3><p>S: 749 | M: 1249 | L: 1899</p><span class="price">Rs 749 / 1249 / 1899</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="karahi" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">KARAHI (H / F)</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=500&q=80" alt="Karahi" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="25 - 35 mins" data-used="Fresh chicken, tomatoes, ginger, green chillies, traditional karahi spices">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=500&q=80" alt="Chicken Karahi" loading="lazy"></div>
+                    <div class="card-body"><h3>Chicken Karahi</h3><p>Half: Rs 1499 | Full: Rs 2799</p><span class="price">Rs 1499 / 2799</span></div>
+                </div>
+                <div class="food-card" data-time="25 - 35 mins" data-used="Chicken, yogurt, cream, black pepper, white karahi masala, ginger">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=500&q=80" alt="White Karahi" loading="lazy"></div>
+                    <div class="card-body"><h3>White Karahi</h3><p>Half: Rs 1599 | Full: Rs 2899</p><span class="price">Rs 1599 / 2899</span></div>
+                </div>
+                <div class="food-card" data-time="25 - 30 mins" data-used="Boneless chicken cubes, rich gravy, cream, aromatic spices">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=500&q=80" alt="Boneless Handi" loading="lazy"></div>
+                    <div class="card-body"><h3>Boneless Handi</h3><p>Half: Rs 1599 | Full: Rs 2899</p><span class="price">Rs 1599 / 2899</span></div>
+                </div>
+                <div class="food-card" data-time="25 - 30 mins" data-used="Boneless chicken, silky white cream gravy, black pepper, butter">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=500&q=80" alt="White Handi" loading="lazy"></div>
+                    <div class="card-body"><h3>White Handi</h3><p>Half: Rs 1599 | Full: Rs 2899</p><span class="price">Rs 1599 / 2899</span></div>
+                </div>
+                <div class="food-card" data-time="30 - 40 mins" data-used="Tender mutton, fresh tomatoes, ginger juliennes, green chillies, spices">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1545247181-516773cae754?w=500&q=80" alt="Mutton Karahi" loading="lazy"></div>
+                    <div class="card-body"><h3>Mutton Karahi</h3><p>Half: Rs 2549 | Full: Rs 4549</p><span class="price">Rs 2549 / 4549</span></div>
+                </div>
+                <div class="food-card" data-time="30 - 40 mins" data-used="Tender mutton, white cream gravy, yogurt, crushed black pepper">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=500&q=80" alt="Mutton White Karahi" loading="lazy"></div>
+                    <div class="card-body"><h3>Mutton White Karahi</h3><p>Half: Rs 2649 | Full: Rs 4649</p><span class="price">Rs 2649 / 4649</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bbq" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">BBQ</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&q=80" alt="BBQ" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="20 - 25 mins" data-used="Charcoal grilled chicken tikka marinated in traditional spices">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=500&q=80" alt="Chicken Tikka" loading="lazy"></div>
+                    <div class="card-body"><h3>Chicken Tikka</h3><p>6 Pcs: Rs 699 | 12 Pcs: Rs 1299</p><span class="price">Rs 699 / 1299</span></div>
+                </div>
+                <div class="food-card" data-time="20 - 25 mins" data-used="Creamy malai marinated boneless boti grilled over charcoal">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=500&q=80" alt="Malai Boti" loading="lazy"></div>
+                    <div class="card-body"><h3>Malai Boti</h3><p>6 Pcs: Rs 699 | 12 Pcs: Rs 1449</p><span class="price">Rs 699 / 1449</span></div>
+                </div>
+                <div class="food-card" data-time="20 - 25 mins" data-used="Afghani style spiced boti cubes with mild creamy marinade">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=500&q=80" alt="Afghani Boti" loading="lazy"></div>
+                    <div class="card-body"><h3>Afghani Boti</h3><p>6 Pcs: Rs 699 | 12 Pcs: Rs 1299</p><span class="price">Rs 699 / 1299</span></div>
+                </div>
+                <div class="food-card" data-time="20 - 25 mins" data-used="Rich Behari masala marinated chicken boti, smoky grilled">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500&q=80" alt="Behari Boti" loading="lazy"></div>
+                    <div class="card-body"><h3>Behari Boti</h3><p>6 Pcs: Rs 699 | 12 Pcs: Rs 1299</p><span class="price">Rs 699 / 1299</span></div>
+                </div>
+                <div class="food-card" data-time="20 - 25 mins" data-used="Skewered spiced boti grilled with herbs and aromatic BBQ masala">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&q=80" alt="Sheesh Tok Boti" loading="lazy"></div>
+                    <div class="card-body"><h3>Sheesh Tok Boti</h3><p>6 Pcs: Rs 699 | 12 Pcs: Rs 1299</p><span class="price">Rs 699 / 1299</span></div>
+                </div>
+                <div class="food-card" data-time="20 - 25 mins" data-used="Cheese-infused boti pieces grilled to juicy perfection">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1532636875304-0c89119d9b4d?w=500&q=80" alt="Cheese Boti" loading="lazy"></div>
+                    <div class="card-body"><h3>Cheese Boti</h3><p>6 Pcs: Rs 749 | 12 Pcs: Rs 1349</p><span class="price">Rs 749 / 1349</span></div>
+                </div>
+                <div class="food-card" data-time="18 - 22 mins" data-used="Minced chicken, fresh herbs, coriander, green chillies, BBQ spices">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=500&q=80" alt="Chicken Kabab" loading="lazy"></div>
+                    <div class="card-body"><h3>Chicken Kabab</h3><p>2 Pcs: Rs 499 | 4 Pcs: Rs 999</p><span class="price">Rs 499 / 999</span></div>
+                </div>
+                <div class="food-card" data-time="18 - 22 mins" data-used="Behari spiced minced meat kababs grilled over charcoal">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=500&q=80" alt="Behari Kabab" loading="lazy"></div>
+                    <div class="card-body"><h3>Behari Kabab</h3><p>2 Pcs: Rs 499 | 4 Pcs: Rs 999</p><span class="price">Rs 499 / 999</span></div>
+                </div>
+                <div class="food-card" data-time="18 - 22 mins" data-used="Spiced kabab with melted cheese core and fresh herbs">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500&q=80" alt="Cheese Kabab" loading="lazy"></div>
+                    <div class="card-body"><h3>Cheese Kabab</h3><p>2 Pcs: Rs 549 | 4 Pcs: Rs 999</p><span class="price">Rs 549 / 999</span></div>
+                </div>
+                <div class="food-card" data-time="20 - 25 mins" data-used="Chicken leg piece marinated in spicy tikka masala and grilled">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=500&q=80" alt="Leg Piece Tikka" loading="lazy"></div>
+                    <div class="card-body"><h3>Leg Piece Tikka</h3><p>Spicy grilled chicken leg piece.</p><span class="price">Rs 699</span></div>
+                </div>
+                <div class="food-card" data-time="20 - 25 mins" data-used="Chicken leg piece marinated in creamy malai seasoning">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1532636875304-0c89119d9b4d?w=500&q=80" alt="Leg Piece Malai" loading="lazy"></div>
+                    <div class="card-body"><h3>Leg Piece Malai</h3><p>Creamy malai grilled chicken leg piece.</p><span class="price">Rs 699</span></div>
+                </div>
+                <div class="food-card" data-time="20 - 25 mins" data-used="Juicy chicken chest piece with spicy tikka marinade">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=500&q=80" alt="Chest Piece Tikka" loading="lazy"></div>
+                    <div class="card-body"><h3>Chest Piece Tikka</h3><p>Juicy grilled chicken chest piece tikka.</p><span class="price">Rs 799</span></div>
+                </div>
+                <div class="food-card" data-time="20 - 25 mins" data-used="Chicken chest piece in rich malai cream marinade">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=500&q=80" alt="Chest Piece Malai" loading="lazy"></div>
+                    <div class="card-body"><h3>Chest Piece Malai</h3><p>Rich creamy malai chest piece.</p><span class="price">Rs 849</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="appetizers" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">APPETIZER'S</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=500&q=80" alt="Appetizers" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="12 - 18 mins" data-used="Crispy chicken bites, spicy dynamite glaze, sesame seeds, spring onion">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=500&q=80" alt="Dynamite Chicken" loading="lazy"></div>
+                    <div class="card-body"><h3>Dynamite Chicken (6 Pcs)</h3><p>Crispy chicken tossed in spicy dynamite sauce.</p><span class="price">Rs 649</span></div>
+                </div>
+                <div class="food-card" data-time="12 - 18 mins" data-used="Golden breaded chicken strips, seasoning, dipping sauce">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=500&q=80" alt="Chicken Tender" loading="lazy"></div>
+                    <div class="card-body"><h3>Chicken Tender (6 Pcs)</h3><p>Golden crispy chicken tenders.</p><span class="price">Rs 699</span></div>
+                </div>
+                <div class="food-card" data-time="10 - 15 mins" data-used="Freshly simmered soup stock, chicken, vegetables, mild seasoning">
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&q=80" alt="Soup of the Day" loading="lazy"></div>
+                    <div class="card-body"><h3>Soup of the Day (S / F)</h3><p>Small: Rs 499 | Full: Rs 1499</p><span class="price">Rs 499 / 1499</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fries" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">FRIES</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500&q=80" alt="Fries" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="8 - 12 mins" data-used="Crispy potato fries, salt"><div class="card-img"><img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500&q=80" alt="Plain Fries" loading="lazy"></div><div class="card-body"><h3>Plain Fries</h3><p>Classic crispy salted fries.</p><span class="price">Rs 499</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Crispy potato fries, chat/masala spice blend"><div class="card-img"><img src="https://images.unsplash.com/photo-1630384060421-cb20aed8e077?w=500&q=80" alt="Masala Fries" loading="lazy"></div><div class="card-body"><h3>Masala Fries</h3><p>Spiced masala seasoned fries.</p><span class="price">Rs 529</span></div></div>
+                <div class="food-card" data-time="10 - 14 mins" data-used="Crispy fries, garlic mayo drizzle, herbs"><div class="card-img"><img src="https://images.unsplash.com/photo-1585109649139-366815a0d713?w=500&q=80" alt="Garlic Mayo Fries" loading="lazy"></div><div class="card-body"><h3>Garlic Mayo Fries</h3><p>Fries topped with creamy garlic mayo.</p><span class="price">Rs 599</span></div></div>
+                <div class="food-card" data-time="12 - 18 mins" data-used="Fries, chicken chunks, melted cheese, special sauces, jalapenos"><div class="card-img"><img src="https://images.unsplash.com/photo-1518013431117-eb1465fa5752?w=500&q=80" alt="Loaded Fries" loading="lazy"></div><div class="card-body"><h3>Loaded Fries</h3><p>Loaded with chicken, cheese & sauces.</p><span class="price">Rs 849</span></div></div>
+                <div class="food-card" data-time="12 - 18 mins" data-used="Fries, pizza sauce, mozzarella cheese, olives, chicken topping"><div class="card-img"><img src="https://images.unsplash.com/photo-1630384060421-cb20aed8e077?w=500&q=80" alt="Pizza Fries" loading="lazy"></div><div class="card-body"><h3>Pizza Fries</h3><p>Fries topped with pizza sauce & cheese.</p><span class="price">Rs 849</span></div></div>
+            </div>
+        </section>
+
+        <section id="wings" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">WINGS</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=500&q=80" alt="Wings" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="12 - 18 mins" data-used="Chicken wings, smoky BBQ glaze, spices"><div class="card-img"><img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=500&q=80" alt="BBQ Wings" loading="lazy"></div><div class="card-body"><h3>BBQ Wings (6 Pcs)</h3><p>Smoky BBQ glazed chicken wings.</p><span class="price">Rs 699</span></div></div>
+                <div class="food-card" data-time="12 - 18 mins" data-used="Crispy seasoned chicken wings, golden fried"><div class="card-img"><img src="https://images.unsplash.com/photo-1608039755401-742074f0548d?w=500&q=80" alt="Crispy Wings" loading="lazy"></div><div class="card-body"><h3>Crispy Wings (6 Pcs)</h3><p>Golden crunchy fried chicken wings.</p><span class="price">Rs 699</span></div></div>
+                <div class="food-card" data-time="10 - 15 mins" data-used="Seasoned minced chicken nuggets, crispy breadcrumb coating"><div class="card-img"><img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=500&q=80" alt="Nuggets" loading="lazy"></div><div class="card-body"><h3>Nuggets (6 Pcs)</h3><p>Crispy bite-sized chicken nuggets.</p><span class="price">Rs 549</span></div></div>
+            </div>
+        </section>
+
+        <section id="sandwich" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">SANDWICH</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=500&q=80" alt="Sandwich" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="15 - 20 mins" data-used="Toasted bread, GK special chicken filling, cheese, sauces"><div class="card-img"><img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=500&q=80" alt="GK Special Sandwich" loading="lazy"></div><div class="card-body"><h3>GK Special Sandwich</h3><p>House special toasted sandwich.</p><span class="price">Rs 899</span></div></div>
+                <div class="food-card" data-time="15 - 20 mins" data-used="Grilled chicken, toasted bread, lettuce, mayo"><div class="card-img"><img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?w=500&q=80" alt="Grill Sandwich" loading="lazy"></div><div class="card-body"><h3>Grill Sandwich</h3><p>Grilled chicken sandwich.</p><span class="price">Rs 849</span></div></div>
+                <div class="food-card" data-time="15 - 20 mins" data-used="BBQ chicken, toasted bread, smoky sauce, veggies"><div class="card-img"><img src="https://images.unsplash.com/photo-1539252554453-80ab65ce3586?w=500&q=80" alt="BBQ Sandwich" loading="lazy"></div><div class="card-body"><h3>BBQ Sandwich</h3><p>Smoky BBQ chicken sandwich.</p><span class="price">Rs 849</span></div></div>
+                <div class="food-card" data-time="15 - 20 mins" data-used="Triple-layer bread, chicken, egg, cheese, lettuce, mayo"><div class="card-img"><img src="https://images.unsplash.com/photo-1567234669003-dce7a7a88821?w=500&q=80" alt="Club Sandwich" loading="lazy"></div><div class="card-body"><h3>Club Sandwich</h3><p>Layered classic club sandwich.</p><span class="price">Rs 899</span></div></div>
+                <div class="food-card" data-time="15 - 20 mins" data-used="Crispy chicken fillet, toasted bread, coleslaw/mayo"><div class="card-img"><img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=500&q=80" alt="Crispy Sandwich" loading="lazy"></div><div class="card-body"><h3>Crispy Sandwich</h3><p>Crispy chicken fillet sandwich.</p><span class="price">Rs 899</span></div></div>
+                <div class="food-card" data-time="15 - 20 mins" data-used="Chicken, spicy jalapenos, cheese, toasted bread"><div class="card-img"><img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?w=500&q=80" alt="Jalapeno Sandwich" loading="lazy"></div><div class="card-body"><h3>Jalapeno Sandwich</h3><p>Spicy jalapeno chicken sandwich.</p><span class="price">Rs 849</span></div></div>
+            </div>
+        </section>
+
+        <section id="wrap" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">WRAP</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=500&q=80" alt="Wrap" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="12 - 18 mins" data-used="Flatbread wrap, grilled chicken, fresh veggies, garlic/house sauce"><div class="card-img"><img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=500&q=80" alt="Grill Chicken Wrap" loading="lazy"></div><div class="card-body"><h3>Grill Chicken Wrap</h3><p>Grilled chicken wrapped with sauces.</p><span class="price">Rs 899</span></div></div>
+                <div class="food-card" data-time="12 - 18 mins" data-used="Tortilla/paratha wrap, spiced chicken, chipotle sauce, veggies"><div class="card-img"><img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=500&q=80" alt="Chapotlay Wrap" loading="lazy"></div><div class="card-body"><h3>Chapotlay Wrap</h3><p>Chipotle flavored chicken wrap.</p><span class="price">Rs 899</span></div></div>
+                <div class="food-card" data-time="12 - 18 mins" data-used="Crispy chicken strips, wrap bread, lettuce, creamy dressing"><div class="card-img"><img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=500&q=80" alt="Crispy Chicken Wrap" loading="lazy"></div><div class="card-body"><h3>Crispy Chicken Wrap</h3><p>Crispy chicken roll wrap.</p><span class="price">Rs 899</span></div></div>
+                <div class="food-card" data-time="12 - 18 mins" data-used="BBQ chicken, wrap bread, onions, smoky BBQ sauce"><div class="card-img"><img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=500&q=80" alt="BBQ Wrap" loading="lazy"></div><div class="card-body"><h3>BBQ Wrap</h3><p>Smoky BBQ chicken wrap.</p><span class="price">Rs 899</span></div></div>
+            </div>
+        </section>
+
+        <section id="pasta" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">PASTA'S</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=500&q=80" alt="Pasta" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="18 - 25 mins" data-used="Penne/fettuccine pasta, chicken chunks, creamy alfredo sauce, parmesan"><div class="card-img"><img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=500&q=80" alt="Chicken Alfredo Pasta" loading="lazy"></div><div class="card-body"><h3>Chicken Alfredo Pasta</h3><p>Creamy chicken alfredo pasta.</p><span class="price">Rs 1049</span></div></div>
+                <div class="food-card" data-time="18 - 22 mins" data-used="Macaroni pasta, rich cheddar & mozzarella cheese sauce, herbs"><div class="card-img"><img src="https://images.unsplash.com/photo-1543339308-43e59d6b73a6?w=500&q=80" alt="Mac N Cheese Pasta" loading="lazy"></div><div class="card-body"><h3>Mac N Cheese Pasta</h3><p>Rich cheesy macaroni pasta.</p><span class="price">Rs 1049</span></div></div>
+            </div>
+        </section>
+
+        <section id="stakes" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">STAKES</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1558030006-450675393462?w=500&q=80" alt="Stakes" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="25 - 30 mins" data-used="Chicken or beef steak, stuffed filling, sides, signature steak sauce"><div class="card-img"><img src="https://images.unsplash.com/photo-1558030006-450675393462?w=500&q=80" alt="Polo Stuff Stake" loading="lazy"></div><div class="card-body"><h3>Polo Stuff Stake</h3><p>Chicken: Rs 1599 | Beef: Rs 2199</p><span class="price">Rs 1599 / 2199</span></div></div>
+                <div class="food-card" data-time="25 - 30 mins" data-used="Stuffed chicken or beef steak, grilled herbs, sides, sauce"><div class="card-img"><img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=500&q=80" alt="Stuff Chicken Stake" loading="lazy"></div><div class="card-body"><h3>Stuff Chicken Stake</h3><p>Chicken: Rs 1599 | Beef: Rs 2199</p><span class="price">Rs 1599 / 2199</span></div></div>
+                <div class="food-card" data-time="25 - 30 mins" data-used="Chicken or beef steak, tarragon herb sauce, grilled sides"><div class="card-img"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=500&q=80" alt="Taragon Stake" loading="lazy"></div><div class="card-body"><h3>Taragon Stake</h3><p>Chicken: Rs 1549 | Beef: Rs 2199</p><span class="price">Rs 1549 / 2199</span></div></div>
+                <div class="food-card" data-time="25 - 30 mins" data-used="Chicken or beef steak, creamy mushroom sauce, sides"><div class="card-img"><img src="https://images.unsplash.com/photo-1558030006-450675393462?w=500&q=80" alt="Mushroom Stake" loading="lazy"></div><div class="card-body"><h3>Mushroom Stake</h3><p>Chicken: Rs 1549 | Beef: Rs 2199</p><span class="price">Rs 1549 / 2199</span></div></div>
+                <div class="food-card" data-time="25 - 30 mins" data-used="Chicken or beef steak, spicy jalapeno sauce, grilled sides"><div class="card-img"><img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=500&q=80" alt="Jalapeno Stake" loading="lazy"></div><div class="card-body"><h3>Jalapeno Stake</h3><p>Chicken: Rs 1549 | Beef: Rs 2199</p><span class="price">Rs 1549 / 2199</span></div></div>
+                <div class="food-card" data-time="25 - 30 mins" data-used="Chicken or beef steak, Moroccan spiced glaze, sides"><div class="card-img"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=500&q=80" alt="Morocan Stake" loading="lazy"></div><div class="card-body"><h3>Morocan Stake</h3><p>Chicken: Rs 1549 | Beef: Rs 2199</p><span class="price">Rs 1549 / 2199</span></div></div>
+            </div>
+        </section>
+
+        <section id="chinese" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">CHINESE</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?w=500&q=80" alt="Chinese" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="20 - 25 mins" data-used="Chicken cubes, crushed black pepper, capsicum, soy/chinese sauces, rice"><div class="card-img"><img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?w=500&q=80" alt="Black Paper Chicken" loading="lazy"></div><div class="card-body"><h3>Black Paper Chicken</h3><p>Served with rice.</p><span class="price">Rs 1249</span></div></div>
+                <div class="food-card" data-time="20 - 25 mins" data-used="Chicken, Manchurian gravy, garlic, ginger, spring onion, rice"><div class="card-img"><img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500&q=80" alt="Chicken Manchurian" loading="lazy"></div><div class="card-body"><h3>Chicken Manchurian</h3><p>Served with rice.</p><span class="price">Rs 1249</span></div></div>
+                <div class="food-card" data-time="20 - 25 mins" data-used="Chicken, tomatoes, bell peppers, onions, tangy sauce, rice"><div class="card-img"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=500&q=80" alt="Chicken Shashlik" loading="lazy"></div><div class="card-body"><h3>Chicken Shashlik</h3><p>Served with rice.</p><span class="price">Rs 1249</span></div></div>
+                <div class="food-card" data-time="20 - 25 mins" data-used="Chicken strips, green chillies, spicy dry chinese sauce, rice"><div class="card-img"><img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500&q=80" alt="Chicken Chilli Dry" loading="lazy"></div><div class="card-body"><h3>Chicken Chilli Dry</h3><p>Served with rice.</p><span class="price">Rs 1349</span></div></div>
+            </div>
+        </section>
+
+        <section id="roti-salad" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">ROTI / SALAD / RAITA</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&q=80" alt="Roti and Salad" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="5 - 10 mins" data-used="Whole wheat flour baked fresh in tandoor"><div class="card-img"><img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=500&q=80" alt="Sada Roti" loading="lazy"></div><div class="card-body"><h3>Sada Roti</h3><p>Fresh tandoori roti.</p><span class="price">Rs 39</span></div></div>
+                <div class="food-card" data-time="5 - 10 mins" data-used="Fine flour dough baked soft in tandoor"><div class="card-img"><img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=500&q=80" alt="Sada Nan" loading="lazy"></div><div class="card-body"><h3>Sada Nan</h3><p>Soft freshly baked naan.</p><span class="price">Rs 99</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Tandoori naan brushed with butter/ghee and sesame"><div class="card-img"><img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500&q=80" alt="Roghni Nan" loading="lazy"></div><div class="card-body"><h3>Roghni Nan</h3><p>Buttered roghni naan.</p><span class="price">Rs 199</span></div></div>
+                <div class="food-card" data-time="5 - 8 mins" data-used="Fresh yogurt, cumin/mint/veggie seasoning"><div class="card-img"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&q=80" alt="Raita" loading="lazy"></div><div class="card-body"><h3>Raita</h3><p>Fresh yogurt raita.</p><span class="price">Rs 149</span></div></div>
+                <div class="food-card" data-time="5 - 10 mins" data-used="Cucumber, tomatoes, onion, lettuce, lemon"><div class="card-img"><img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500&q=80" alt="Salad" loading="lazy"></div><div class="card-body"><h3>Salad</h3><p>Fresh green garden salad.</p><span class="price">Rs 149</span></div></div>
+                <div class="food-card" data-time="10 - 15 mins" data-used="Crisp lettuce, croutons, creamy caesar dressing, cheese"><div class="card-img"><img src="https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=500&q=80" alt="Ceaser Salad" loading="lazy"></div><div class="card-body"><h3>Ceaser Salad</h3><p>Classic Caesar salad.</p><span class="price">Rs 599</span></div></div>
+                <div class="food-card" data-time="12 - 16 mins" data-used="Crispy chicken strips, fresh greens, dressing"><div class="card-img"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&q=80" alt="Crispy Chicken Salad" loading="lazy"></div><div class="card-body"><h3>Crispy Chicken Salad</h3><p>Salad topped with crispy chicken.</p><span class="price">Rs 599</span></div></div>
+                <div class="food-card" data-time="12 - 16 mins" data-used="House special greens, chicken, veggies, signature dressing"><div class="card-img"><img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500&q=80" alt="GK Special Salad" loading="lazy"></div><div class="card-body"><h3>GK Special Salad</h3><p>Gana Khana special salad.</p><span class="price">Rs 749</span></div></div>
+            </div>
+        </section>
+
+        <section id="tea" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">TEA</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=500&q=80" alt="Tea" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="8 - 12 mins" data-used="Strong tea leaves, milk, sugar, boiled for rich kadak flavor"><div class="card-img"><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=500&q=80" alt="Karak Tea" loading="lazy"></div><div class="card-body"><h3>Karak Tea</h3><p>Strong kadak chai.</p><span class="price">Rs 399</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Green cardamom (elaichi), tea leaves, milk, sugar"><div class="card-img"><img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=500&q=80" alt="Cardamom Tea" loading="lazy"></div><div class="card-body"><h3>Cardamom Tea</h3><p>Elaichi flavored hot tea.</p><span class="price">Rs 399</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Pure milk, tea leaves, sugar"><div class="card-img"><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=500&q=80" alt="Doodh Patti" loading="lazy"></div><div class="card-body"><h3>Doodh Patti</h3><p>Pure milk doodh patti chai.</p><span class="price">Rs 399</span></div></div>
+                <div class="food-card" data-time="10 - 15 mins" data-used="Smoky clay pot infusion, milk tea leaves, sugar"><div class="card-img"><img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=500&q=80" alt="Tandoori Tea" loading="lazy"></div><div class="card-body"><h3>Tandoori Tea</h3><p>Smoky clay pot tandoori chai.</p><span class="price">Rs 399</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Fresh ginger root, tea leaves, milk, sugar"><div class="card-img"><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=500&q=80" alt="Ginger Tea" loading="lazy"></div><div class="card-body"><h3>Ginger Tea</h3><p>Adrak wali garam chai.</p><span class="price">Rs 399</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Aromatic desi spices, tea leaves, milk, sugar"><div class="card-img"><img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=500&q=80" alt="Masala Tea" loading="lazy"></div><div class="card-body"><h3>Masala Tea</h3><p>Spiced masala chai.</p><span class="price">Rs 399</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Coffee shot, tea blend, warm milk"><div class="card-img"><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=500&q=80" alt="Coffee Tea" loading="lazy"></div><div class="card-body"><h3>Coffee Tea</h3><p>Coffee blended hot tea.</p><span class="price">Rs 449</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Rich chocolate, tea blend, warm milk"><div class="card-img"><img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=500&q=80" alt="Chocolate Tea" loading="lazy"></div><div class="card-body"><h3>Chocolate Tea</h3><p>Rich chocolate tea.</p><span class="price">Rs 449</span></div></div>
+                <div class="food-card" data-time="12 - 16 mins" data-used="Kashmiri tea leaves, milk, pistachios/almonds, salt/sugar"><div class="card-img"><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=500&q=80" alt="Kashmiri Tea" loading="lazy"></div><div class="card-body"><h3>Kashmiri Tea</h3><p>Pink Kashmiri chai with nuts.</p><span class="price">Rs 549</span></div></div>
+                <div class="food-card" data-time="7 - 10 mins" data-used="Green tea leaves, water, sugar/honey"><div class="card-img"><img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=500&q=80" alt="Green Kehwa" loading="lazy"></div><div class="card-body"><h3>Green Kehwa</h3><p>Refreshing green kehwa.</p><span class="price">Rs 349</span></div></div>
+                <div class="food-card" data-time="7 - 10 mins" data-used="Peshawari kehwa leaves, cardamom, subtle sweetness"><div class="card-img"><img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=500&q=80" alt="Peshawari Kehwa" loading="lazy"></div><div class="card-body"><h3>Peshawari Kehwa</h3><p>Traditional Peshawari kehwa.</p><span class="price">Rs 349</span></div></div>
+                <div class="food-card" data-time="7 - 10 mins" data-used="Fresh lemongrass stalks, hot water, light sweetness"><div class="card-img"><img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=500&q=80" alt="Lemon Grass" loading="lazy"></div><div class="card-body"><h3>Lemon Grass</h3><p>Aromatic lemon grass tea.</p><span class="price">Rs 349</span></div></div>
+            </div>
+        </section>
+
+        <section id="shakes" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">SHAKES</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&q=80" alt="Shakes" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="8 - 12 mins" data-used="Chilled milk, ice cream, Nutella chocolate spread"><div class="card-img"><img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&q=80" alt="Nutela Shake" loading="lazy"></div><div class="card-body"><h3>Nutela Shake</h3><p>Creamy Nutella milkshake.</p><span class="price">Rs 799</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Chilled milk, vanilla ice cream, crushed Oreo cookies"><div class="card-img"><img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=500&q=80" alt="Oreo Shake" loading="lazy"></div><div class="card-body"><h3>Oreo Shake</h3><p>Crunchy Oreo cookie shake.</p><span class="price">Rs 799</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Chilled milk, ice cream, KitKat chocolate bars"><div class="card-img"><img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&q=80" alt="KitKat Shake" loading="lazy"></div><div class="card-body"><h3>KitKat Shake</h3><p>Chocolate KitKat shake.</p><span class="price">Rs 799</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Chilled milk, vanilla ice cream, vanilla essence"><div class="card-img"><img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=500&q=80" alt="Vanila Shake" loading="lazy"></div><div class="card-body"><h3>Vanila Shake</h3><p>Classic vanilla shake.</p><span class="price">Rs 799</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Chilled milk, chocolate ice cream, cocoa/chocolate syrup"><div class="card-img"><img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&q=80" alt="Chocolate Shake" loading="lazy"></div><div class="card-body"><h3>Chocolate Shake</h3><p>Rich chocolate milkshake.</p><span class="price">Rs 799</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Chilled milk, ice cream, sweet mango pulp"><div class="card-img"><img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=500&q=80" alt="Mango Shake" loading="lazy"></div><div class="card-body"><h3>Mango Shake</h3><p>Sweet mango shake.</p><span class="price">Rs 799</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Chilled milk, fresh bananas, ice cream"><div class="card-img"><img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&q=80" alt="Banana Shake" loading="lazy"></div><div class="card-body"><h3>Banana Shake</h3><p>Fresh banana shake.</p><span class="price">Rs 799</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Chilled milk, strawberry flavor/berries, ice cream"><div class="card-img"><img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=500&q=80" alt="Strawberry Shake" loading="lazy"></div><div class="card-body"><h3>Strawberry Shake</h3><p>Berry strawberry shake.</p><span class="price">Rs 799</span></div></div>
+            </div>
+        </section>
+
+        <section id="smoothies" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">SMOOTHIES</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=500&q=80" alt="Smoothies" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="8 - 12 mins" data-used="Mango fruit blend, chilled yogurt/base, ice"><div class="card-img"><img src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=500&q=80" alt="Mango Smoothie" loading="lazy"></div><div class="card-body"><h3>Mango Smoothie</h3><p>Chilled mango smoothie.</p><span class="price">Rs 799</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Fresh banana blend, chilled base, ice"><div class="card-img"><img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500&q=80" alt="Banana Smoothie" loading="lazy"></div><div class="card-body"><h3>Banana Smoothie</h3><p>Creamy banana smoothie.</p><span class="price">Rs 799</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Strawberry fruit blend, chilled base, ice"><div class="card-img"><img src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=500&q=80" alt="Strawberry Smoothie" loading="lazy"></div><div class="card-body"><h3>Strawberry Smoothie</h3><p>Fresh strawberry smoothie.</p><span class="price">Rs 799</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Blueberry blend, chilled base, crushed ice"><div class="card-img"><img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500&q=80" alt="Blue Berry Smoothie" loading="lazy"></div><div class="card-body"><h3>Blue Berry Smoothie</h3><p>Blueberry fruit smoothie.</p><span class="price">Rs 799</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Crisp apple blend, chilled base, ice"><div class="card-img"><img src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=500&q=80" alt="Apple Smoothie" loading="lazy"></div><div class="card-body"><h3>Apple Smoothie</h3><p>Crisp apple smoothie.</p><span class="price">Rs 799</span></div></div>
+            </div>
+        </section>
+
+       
+        <section id="mocktails" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">MOCKTAILS</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&q=80" alt="Mocktails" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="7 - 10 mins" data-used="Fresh mint leaves, lime juice, soda, ice"><div class="card-img"><img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&q=80" alt="Mint Margarita" loading="lazy"></div><div class="card-body"><h3>Mint Margarita</h3><p>Cool mint & lime mocktail.</p><span class="price">Rs 699</span></div></div>
+                <div class="food-card" data-time="7 - 10 mins" data-used="Strawberry syrup/berries, fizz/soda, lime, ice"><div class="card-img"><img src="https://images.unsplash.com/photo-1546171753-97d7676e4602?w=500&q=80" alt="Strawberry Mocktail" loading="lazy"></div><div class="card-body"><h3>Strawberry Mocktail</h3><p>Refreshing strawberry cooler.</p><span class="price">Rs 699</span></div></div>
+                <div class="food-card" data-time="7 - 10 mins" data-used="Green apple flavor, chilled soda/mixer, ice"><div class="card-img"><img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&q=80" alt="Green Apple Mocktail" loading="lazy"></div><div class="card-body"><h3>Green Apple Mocktail</h3><p>Tangy green apple drink.</p><span class="price">Rs 699</span></div></div>
+                <div class="food-card" data-time="7 - 10 mins" data-used="Blueberry flavor, chilled fizz, lemon, ice"><div class="card-img"><img src="https://images.unsplash.com/photo-1546171753-97d7676e4602?w=500&q=80" alt="Blueberry Mocktail" loading="lazy"></div><div class="card-body"><h3>Blueberry Mocktail</h3><p>Chilled blueberry fizz.</p><span class="price">Rs 699</span></div></div>
+                <div class="food-card" data-time="7 - 10 mins" data-used="Fresh lemon juice, chilled water/soda, sugar, ice"><div class="card-img"><img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&q=80" alt="Lemonade" loading="lazy"></div><div class="card-body"><h3>Lemonade</h3><p>Freshly squeezed lemonade.</p><span class="price">Rs 699</span></div></div>
+                <div class="food-card" data-time="7 - 10 mins" data-used="Fresh lime, chilled soda/water, salt/sugar, ice"><div class="card-img"><img src="https://images.unsplash.com/photo-1546171753-97d7676e4602?w=500&q=80" alt="Fresh Lime" loading="lazy"></div><div class="card-body"><h3>Fresh Lime</h3><p>Zesty fresh lime soda.</p><span class="price">Rs 699</span></div></div>
+            </div>
+        </section>
+
+        
+        <section id="coffee" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">HOT & COLD COFFEE</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&q=80" alt="Coffee" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="8 - 12 mins" data-used="Espresso shot, steamed milk, smooth micro-foam"><div class="card-img"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&q=80" alt="Latte" loading="lazy"></div><div class="card-body"><h3>Latte (Hot)</h3><p>Smooth espresso with steamed milk.</p><span class="price">Rs 649</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Espresso shot, steamed milk, thick foam top"><div class="card-img"><img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=500&q=80" alt="Cappuccino" loading="lazy"></div><div class="card-body"><h3>Cappuccino (Hot)</h3><p>Espresso with rich milk foam.</p><span class="price">Rs 649</span></div></div>
+                <div class="food-card" data-time="6 - 10 mins" data-used="Rich espresso shot, hot water"><div class="card-img"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&q=80" alt="Americano" loading="lazy"></div><div class="card-body"><h3>Americano (Hot)</h3><p>Classic black hot coffee.</p><span class="price">Rs 649</span></div></div>
+                <div class="food-card" data-time="5 - 8 mins" data-used="Finely ground roasted coffee beans, hot extraction"><div class="card-img"><img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=500&q=80" alt="Espresso Shot" loading="lazy"></div><div class="card-body"><h3>Espresso Shot</h3><p>Strong single/double espresso.</p><span class="price">Rs 649</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Espresso, chilled milk, ice cubes"><div class="card-img"><img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=500&q=80" alt="Iced Latte" loading="lazy"></div><div class="card-body"><h3>Iced Latte</h3><p>Chilled iced coffee latte.</p><span class="price">Rs 799</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Brewed tea, peach flavor, chilled ice"><div class="card-img"><img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500&q=80" alt="Peach Ice Tea" loading="lazy"></div><div class="card-body"><h3>Peach Ice Tea</h3><p>Refreshing iced peach tea.</p><span class="price">Rs 799</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="GK special coffee blend, chilled milk/cream, ice"><div class="card-img"><img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=500&q=80" alt="GK SP Cold Coffee" loading="lazy"></div><div class="card-body"><h3>GK SP Cold Coffee</h3><p>Gana Khana special cold coffee.</p><span class="price">Rs 799</span></div></div>
+            </div>
+        </section>
+
+        
+        <section id="fish" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">FISH</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500&q=80" alt="Fish" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="18 - 22 mins" data-used="Boneless fish strips, crispy batter/breadcrumbs, spices"><div class="card-img"><img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500&q=80" alt="Finger Fish" loading="lazy"></div><div class="card-body"><h3>Finger Fish (4 Pcs)</h3><p>Crispy golden fish fingers.</p><span class="price">Rs 1099</span></div></div>
+                <div class="food-card" data-time="25 - 30 mins" data-used="Kala Rahu fish, herb & spice marinade, oven baked"><div class="card-img"><img src="https://images.unsplash.com/photo-1580476262798-bddd9c4b7369?w=500&q=80" alt="Kala Rahu Baked" loading="lazy"></div><div class="card-body"><h3>Kala Rahu Baked</h3><p>Oven-baked Kala Rahu fish.</p><span class="price">Rs 1699</span></div></div>
+                <div class="food-card" data-time="20 - 25 mins" data-used="Kala Rahu fish, traditional spices, golden fried"><div class="card-img"><img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500&q=80" alt="Kala Rahu Fry" loading="lazy"></div><div class="card-body"><h3>Kala Rahu Fry</h3><p>Traditional fried Kala Rahu fish.</p><span class="price">Rs 1699</span></div></div>
+            </div>
+        </section>
+
+        
+        <section id="dessert" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">DESERT</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=500&q=80" alt="Dessert" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="10 - 15 mins" data-used="Dark chocolate, cocoa, butter, flour, sugar"><div class="card-img"><img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500&q=80" alt="Brownie" loading="lazy"></div><div class="card-body"><h3>Brownie (1 Pc)</h3><p>Warm fudgy chocolate brownie.</p><span class="price">Rs 649</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Khoya/milk dough dumplings, warm sugar syrup, cardamom"><div class="card-img"><img src="https://images.unsplash.com/photo-1589119908995-c6837fa14848?w=500&q=80" alt="Gulab Jamun 2 Pcs" loading="lazy"></div><div class="card-body"><h3>Gulab Jamun (2 Pcs)</h3><p>Sweet warm gulab jamun.</p><span class="price">Rs 249</span></div></div>
+                <div class="food-card" data-time="8 - 12 mins" data-used="Khoya/milk dough dumplings, warm sugar syrup, cardamom"><div class="card-img"><img src="https://images.unsplash.com/photo-1589119908995-c6837fa14848?w=500&q=80" alt="Gulab Jamun 4 Pcs" loading="lazy"></div><div class="card-body"><h3>Gulab Jamun (4 Pcs)</h3><p>Serving of 4 sweet gulab jamun.</p><span class="price">Rs 499</span></div></div>
+            </div>
+        </section>
+
+        
+        <section id="deals" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">DEALS</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&q=80" alt="Deals" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="20 - 25 mins" data-used="2 Zinger Burgers, French fries, 2 chilled cold drinks"><div class="card-img"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&q=80" alt="Deal 1" loading="lazy"></div><div class="card-body"><h3>Deal 1</h3><p>2 Zinger Burger + Fries + 2 Cold Drinks</p><span class="price">Rs 1799</span></div></div>
+                <div class="food-card" data-time="25 - 30 mins" data-used="1 Grill Burger, 1 Medium Pizza, 4 Pcs Crispy, Wings, 2 Cans"><div class="card-img"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80" alt="Deal 2" loading="lazy"></div><div class="card-body"><h3>Deal 2</h3><p>1 Grill Burger + 1 Medium Pizza + 4 Pcs Crispy + Wings + 2 Cans</p><span class="price">Rs 2299</span></div></div>
+                <div class="food-card" data-time="20 - 25 mins" data-used="1 Zinger Burger, 1 Grilled Burger, 1 Plain Fries, 2 Cans"><div class="card-img"><img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=500&q=80" alt="Deal 3" loading="lazy"></div><div class="card-body"><h3>Deal 3</h3><p>1 Zinger Burger + 1 Grilled Burger + 1 Plain Fries + 2 Cans</p><span class="price">Rs 1749</span></div></div>
+                <div class="food-card" data-time="25 - 35 mins" data-used="1 Large Pizza, 1 Medium Pizza, 2 chilled cans"><div class="card-img"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80" alt="Deal 4" loading="lazy"></div><div class="card-body"><h3>Deal 4</h3><p>1 Large Pizza + 1 Medium Pizza + 2 Cans</p><span class="price">Rs 3599</span></div></div>
+                <div class="food-card" data-time="20 - 25 mins" data-used="2 Small Pizzas, 2 chilled cans"><div class="card-img"><img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=500&q=80" alt="Deal 5" loading="lazy"></div><div class="card-body"><h3>Deal 5</h3><p>2 Small Pizza + 2 Can</p><span class="price">Rs 1729</span></div></div>
+                <div class="food-card" data-time="30 - 40 mins" data-used="2 Large Pizzas, 2 Zinger Burgers, Fries, 4 chilled cans"><div class="card-img"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&q=80" alt="Family Deal" loading="lazy"></div><div class="card-body"><h3>Family Deal</h3><p>2 Large Pizza + 2 Zinger Burger + Fries + 4 Cans</p><span class="price">Rs 6999</span></div></div>
+            </div>
+        </section>
+
+        <!-- Side Drawer Sections (Singer, Reviews, About) -->
+        <section id="singer" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">SINGER & LIVE NIGHTS</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&q=80" alt="Live Music" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="Evening Live Sessions" data-used="Live singing performances, music, dining & refreshments">
+                    <div class="card-body">
+                        <h3>Live Music Sessions</h3>
+                        <p>Enjoy live singing and musical evenings with delicious food at Gana Khana.</p>
+                        <span class="price">0321-8405690</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">REVIEWS</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&q=80" alt="Reviews" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="Dine-in & Delivery" data-used="Fresh ingredients, generous portions, live vibe">
+                    <div class="card-body">
+                        <h3>Customer Favorites</h3>
+                        <p>Great taste, family deals, and free delivery in DHA Phase 5, M Extension Service Lane Ring Road, Lahore.</p>
+                        <span class="price">@GANAKHANAOFFICIAL</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="menu-section">
+            <div class="section-banner">
+                <div class="banner-left"><img src="logo.png" alt="Gana Khana"></div>
+                <div class="banner-divider"></div>
+                <h2 class="banner-title">ABOUT GANA KHANA</h2>
+                <div class="banner-right"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=500&q=80" alt="About Gana Khana" loading="lazy"></div>
+            </div>
+            <div class="food-grid">
+                <div class="food-card" data-time="Open Daily" data-used="DHA Phase 5, M Extension Service Lane Ring Road, Lahore">
+                    <div class="card-body">
+                        <h3>Location & Contact</h3>
+                        <p>DHA Phase 5, M Extension Service Lane Ring Road, Lahore • Contact: 0321-8405690</p>
+                        <span class="price">Free Delivery</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Small Floating Detail Window (Screen Ke Mid Mein Float Animation Ke Sath Khulegi) -->
+    <div class="mini-window" id="miniDetailWindow" role="dialog" aria-live="polite">
+        <button class="mini-close-btn" id="closeMiniWindow" aria-label="Close">&times;</button>
+        <div class="mini-img-wrap">
+            <img src="" alt="" id="miniImg">
+        </div>
+        <div class="mini-info">
+            <div class="mini-urdu-brand" dir="rtl">گنا کھانا</div>
+            <h3 id="miniTitle"></h3>
+            <p class="mini-desc" id="miniDesc"></p>
+            <span class="mini-price" id="miniPrice"></span>
+
+            <div class="mini-meta">
+                <div class="mini-meta-row">
+                    <strong><i class="far fa-clock"></i> Time lagega:</strong>
+                    <span id="miniTime"></span>
+                </div>
+                <div class="mini-meta-row">
+                    <strong><i class="fas fa-utensils"></i> Is mein kya kya use hua hai:</strong>
+                    <span id="miniUsed"></span>
+                </div>
+            </div>
+
+            <div class="mini-thanks">
+                Thanks for visiting!
+            </div>
+        </div>
+    </div>
+
+    <button id="scrollTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+    <script src="script.js"></script>
+</body>
+</html>
